@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txtNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Winner Ticket Number:"
+        android:layout_margin="4dp"
+        android:textSize="16sp"
+        />
+
+    <EditText
+        android:id="@+id/etTicketNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner_black_border"
+        android:layout_below="@id/txtNumber"
+        android:padding="8dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="number"
+        android:hint="Ticket Number"
+        android:textColor="@color/grey_60"
+        android:theme="@style/EditText.Blue" />
+
+
+</RelativeLayout>

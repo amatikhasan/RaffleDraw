@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/txtRepeating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:layout_alignParentEnd="true"
+                    android:text="Repeating Customer? Enter ID:"/>
+
+                <EditText
+                    android:id="@+id/etCustomerID"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_black_border"
+                    android:layout_below="@id/txtRepeating"
+                    android:layout_toStartOf="@id/btnSearch"
+                    android:padding="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="16dp"
+                    android:hint="Customer ID"
+                    android:textSize="14dp"
+                    android:inputType="number"
+                    android:textColor="@color/grey_60"
+                    android:theme="@style/EditText.Blue" />
+
+                <TextView
+                    android:id="@+id/btnSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:layout_alignParentEnd="true"
+                    android:padding="8dp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:onClick="searchCustomer"
+                    android:layout_alignBottom="@id/etCustomerID"
+                    android:background="@drawable/round_button_primary"
+                    android:textColor="@color/white"
+                    android:text="Search"/>
+
+
+                <TextView
+                    android:id="@+id/txtTicketNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etCustomerID"
+                    android:textSize="18sp"
+                    android:text="Ticket Number:  "/>
+
+                <TextView
+                    android:id="@+id/tvTicketNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etCustomerID"
+                    android:layout_toEndOf="@id/txtTicketNumber"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"
+                    android:text="000"/>
+
+
+                <TextView
+                    android:id="@+id/txtName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Name:"
+                    android:layout_below="@id/tvTicketNumber"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    />
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/corner_black_border"
+                    android:layout_below="@id/txtName"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Customer Name"
+                    android:textColor="@color/grey_60"
+                    android:theme="@style/EditText.Blue" />
+
+
+                <TextView
+                    android:id="@+id/txtContact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact:"
+                    android:layout_below="@id/etName"
+                    android:layout_margin="4dp"
+                    android:textSize="16sp"
+                    />
+
+                <EditText
+                    android:id="@+id/etContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtContact"
+                    android:padding="8dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/corner_black_border"
+                    android:hint="Customer Contact"
+                    android:textColor="@color/grey_60"
+                    android:theme="@style/EditText.Blue" />
+
+                <TextView
+                    android:id="@+id/txtTicketPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etContact"
+                    android:textSize="18sp"
+                    android:text="Ticket Price:  "/>
+
+                <TextView
+                    android:id="@+id/tvTicketPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/etContact"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/txtPrice"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="0"/>
+
+                <TextView
+                    android:id="@+id/txtPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ "
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/txtTicketPrice"
+                    android:layout_below="@id/etContact"/>
+
+                <TextView
+                    android:id="@+id/txtQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvTicketPrice"
+                    android:textSize="18sp"
+                    android:text="Quantity:"/>
+
+                <LinearLayout
+                    android:id="@+id/llQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                   android:layout_below="@id/tvTicketPrice"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/corner_black_border"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/btnQtyMinus"
+                        android:layout_width="30dp"
+                        android:layout_height="32dp"
+                        android:onClick="quantityFn"
+                        android:src="@drawable/icon_minus" />
+
+                    <TextView
+                        android:id="@+id/tvQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="1"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/btnQtyPlus"
+                        android:layout_width="30dp"
+                        android:layout_height="32dp"
+                        android:onClick="quantityFn"
+                        android:src="@drawable/icon_plus" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/txtTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/llQty"
+                    android:textSize="18sp"
+                    android:text="Total Price:  "/>
+
+                <TextView
+                    android:id="@+id/tvTotalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/llQty"
+                    android:layout_toEndOf="@id/txtTotal"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:text="0"/>
+
+                <TextView
+                    android:id="@+id/txtTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$ "
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/txtTotalPrice"
+                    android:layout_below="@id/llQty"/>
+
+
+
+            </RelativeLayout>
+
+
+            <!-- an empty view for full scroll view -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
